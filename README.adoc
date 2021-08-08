@@ -1,12 +1,4 @@
-= Emerald Wallet for Desktop
-
-image:https://github.com/emeraldpay/emerald-wallet/workflows/Unit%20Tests/badge.svg["Unit Tests"]
-image:https://codecov.io/gh/emeraldpay/emerald-wallet/branch/master/graph/badge.svg[Codecov,link=https://codecov.io/gh/emeraldpay/emerald-wallet]
-image:https://img.shields.io/github/license/emeraldpay/emerald-wallet.svg?maxAge=2592000["License",link="https://github.com/emeraldpay/emerald-wallet/blob/master/LICENSE"]
-
-
-Emerald is a non-custodial desktop cryptocurrency wallet.
-Official website: https://emerald.cash
+= ChrisF15 Wallet for Desktop
 
 Features:
 
@@ -27,8 +19,6 @@ The project is based on
 - Typescript
 - React + Redux
 - Rust for some modules
-
-The recommended way to assert that you are using the correct version of node is to use https://github.com/nodenv/nodenv[nodenv], which will shim the `node` and `npm` commands and assert that the `local` version is set to what is specified in https://github.com/emeraldpay/emerald-wallet/blob/master/.node-version[.node-version].
 
 Once nodenv is installed:
 
@@ -81,32 +71,12 @@ $ lerna run start:electron
 
 === Troubleshooting
 
-==== Emerald Vault module error
-
-Electron may show error, like:
-
-> _[emerald-vault-native] was compiled against a different Node.js version using
-NODE_MODULE_VERSION 64. This version of Node.js requires NODE_MODULE_VERSION 69. Please try re-compiling or re-installing
-the module (for instance, using npm rebuild or npm install)_
-
-At this case you'll need to recompile Emerald Vault for your platform and version of Electron. You will need to have Rust
-compiler and LLVM installed, please follow instructions on:
-
- - https://rustup.rs/
- - http://releases.llvm.org/download.html
-
-After installing Rust and LLVM run following to recompile the module:
-----
-export RUSTFLAGS=-C target-feature=+crt-static
-npm run build:neon
-----
-
 === Logs
 
 Electron and Emerald logs persisted in:
 
- * OSX: `~/Library/Logs/EmeraldWallet/log.log`
- * Linux: `~/.config/EmeraldWallet/log.log`
+ * OSX: `~/Library/Logs/chrisf15-wallet/log.log`
+ * Linux: `~/.config/chrisf15-wallet/log.log`
 
 === Building distributions in development
 
@@ -126,14 +96,6 @@ optionally disable that with `CSC_IDENTITY_AUTO_DISCOVERY=false`.
 OSX is also able to build for Linux. Add `-ml` to that raw command to build for
 both OSX and Linux at the same time.
 
-=== Troubleshooting
-Some preliminary things to try in case you run into issues:
-
-Clear out any persisted settings or userdata from previous trials
- * OSX: `~/Library/Application Support/EmeraldWallet`
- * Linux: `~/.config/EmeraldWallet`
- * Windows: `%APPDATA%\EmeraldWallet`
-
 == Run tests
 
 ----
@@ -146,22 +108,6 @@ yarn test
 ----
 
 == Contact
-
-=== Submit Bug
-
-https://github.com/emeraldpay/emerald-wallet/issues/new
-
-=== Contact Support
-
-https://emerald.cash/support
-
-=== Chat
-
-Chat with us via Gitter: https://gitter.im/emeraldpay/community
-
-=== Submit Security Issue
-
-Email to security@emerald.cash
 
 == License
 
